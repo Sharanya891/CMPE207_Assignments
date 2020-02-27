@@ -9,7 +9,6 @@ port = 23
 
 # connect to the server on local computer 
 s.connect(('94.142.241.111', port)) 
-breakpoint()
 # receive data from the server 
 total_data = []
 data='';
