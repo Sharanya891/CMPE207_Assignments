@@ -1,4 +1,4 @@
-# Import socket module for TCP/IP socket
+#Import socket module for TCP/IP socket
 import socket
 # Import time module to input delay
 import time
