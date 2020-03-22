@@ -1,22 +1,31 @@
-#Import socket module for TCP/IP socket
+# Import socket module for TCP/IP socket
 import socket
 # Import time module to input delay
 import time
 # Import pyfiglet module to customise string
 from pyfiglet import Figlet
 
+import sys
 # Create a socket object
 s = socket.socket()
 
 # Define the port to be connected
 port = 23
 banner = "Hello World !!"
+animation = "|/-\\"
 # Connect to the server on local computer
 s.connect(('94.142.241.111', port))
 # Customizing
 custom_fig = Figlet(font='utopia')
+print ("Loading. Please wait!")
+
+for j in range(20):
+    time.sleep(0.1)
+    sys.stdout.write("\r" + animation[j % len(animation)])
+    sys.stdout.flush()
+print (":)/ \nHere comes the output!")
 for i in banner:
     time.sleep(1)
     print(custom_fig.renderText(i))
 
-print(custom_fig.renderText(banner))
+print("*Tadaa*\n" + custom_fig.renderText(banner))
